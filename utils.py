@@ -33,6 +33,5 @@ def make_dataset_multi():
         e.map(make_dataset, img_list)
 
 
-
 if __name__ ==  "__main__":
     make_dataset_multi()
