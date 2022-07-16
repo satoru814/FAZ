@@ -9,7 +9,7 @@ import albumentations as A
 from albumentations.pytorch import ToTensorV2
 
 import utils
-from models import Unet, NestedUnet
+from models import Unet, NestedUnet, LWBNAUnet
 
 
 import numpy as np
@@ -50,7 +50,7 @@ def main():
 
     
     in_channel, out_channel = CFG.Unet.in_channel, CFG.Unet.out_channel
-    Net = NestedUnet.NestedUNet(in_channel, out_channel).to(device)
+    Net = LWBNAUnet.LWBNAUnet(in_channel, out_channel).to(device)
 
     #set loss functions
     l1_loss = nn.L1Loss().to(device)
